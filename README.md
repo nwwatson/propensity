@@ -56,4 +56,4 @@ end
 Credits
 -------
 
-I've always liked the way "Spree":https://github.com/spree/spree stored configuration settings and thought to myself "Self, you should really break that out so you can use it in other projects". So here it is, most of the code and ideas came from the Spree team. I liked their work, so I gemed it up.
+I've always liked the way Spree (https://github.com/spree/spree) stored configuration settings and thought to myself "Self, you should really break that out so you can use it in other projects". So here it is, most of the code and ideas came from the Spree team. I liked their work, so I gemed it up.
