@@ -37,3 +37,23 @@ initializer "application.environment", :before => :load_config_initializers do |
   MyApplication::Config = config.my_application.preferences
 end
 ```
+
+Configuring Your Settings
+-------
+
+The app_configuraiton.rb file in the models folder is where you will define your preferences. An example may look something like this:
+
+```
+class AppConfiguration < Propensity::Preferences::Configuration
+
+  preference :blog_title, :string, default: "My Blog Title"
+  preference :hours_in_a_day, :integer, default: 24
+  preference :am_i_crazy, :boolean, default: true
+
+end
+```
+
+Credits
+-------
+
+I've always liked the way "Spree":https://github.com/spree/spree stored configuration settings and thought to myself "Self, you should really break that out so you can use it in other projects". So here it is, most of the code and ideas came from the Spree team. I liked their work, so I gemed it up.
