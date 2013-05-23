@@ -126,6 +126,8 @@ module Propensity
           else
              true
           end
+        when :date
+          Date.new(value)
         else
           value
         end
