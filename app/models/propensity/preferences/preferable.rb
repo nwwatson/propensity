@@ -127,7 +127,7 @@ module Propensity
              true
           end
         when :date
-          Date.new(value)
+          Date.parse(value)
         else
           value
         end
