@@ -22,11 +22,12 @@ module Propensity
       end
 
       def exist?(key)
-        @cache.exist? key
+        Propensity::Preference.exists?(key: key)
       end
 
       def get(key)
-        @cache.read(key)
+        #@cache.read(key)
+        Propensity::Preference.find_or_initialize_by(key: key).value
       end
 
       def delete(key)
@@ -39,7 +40,7 @@ module Propensity
       def persist(cache_key, value, type)
         return unless should_persist?
 
-        preference = Propensity::Preference.find_or_initialize_by_key(cache_key)
+        preference = Propensity::Preference.find_or_initialize_by(key: cache_key)
         preference.value = value
         preference.value_type = type
         preference.save
@@ -48,7 +49,7 @@ module Propensity
       def destroy(cache_key)
         return unless should_persist?
 
-        preference = Propensity::Preference.find_by_key(cache_key)
+        preference = Propensity::Preference.find_by(key: cache_key)
         preference.destroy if preference
       end
 

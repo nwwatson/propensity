@@ -7,7 +7,7 @@ module Propensity
         options.assert_valid_keys(:default, :description)
         default = options[:default]
         description = options[:description] || name
-        
+
         # cache_key will be nil for new objects, then if we check if there
         # is a pending preference before going to default
         define_method preference_getter_method(name) do
